@@ -45,7 +45,7 @@ def process_image(image):
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
             # วาด landmarks
-            mp_draw.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+            # mp_draw.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
             
             # ดึงข้อมูล landmark
             landmarks = []
@@ -78,7 +78,7 @@ def predict():
         # Decode base64 image
         image_data = base64.b64decode(data['image'])
         nparr = np.frombuffer(image_data, np.uint8)
-        image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        image = cv2.resize(nparr, (320, 240))
         
         if image is None:
             return jsonify({'error': 'Invalid image data'}), 400
