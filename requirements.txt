@@ -6,11 +6,10 @@ jax
 jaxlib
 sentencepiece
 sounddevice>=0.4.4
-opencv-contrib-python==4.6.0.66
+opencv-python-headless==4.8.1.78
 scikit-learn
 pandas
 seaborn
 flask
 flask_cors
 attrs
-
