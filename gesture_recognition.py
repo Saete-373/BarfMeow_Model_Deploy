@@ -78,7 +78,7 @@ def predict():
         # Decode base64 image
         image_data = base64.b64decode(data['image'])
         nparr = np.frombuffer(image_data, np.uint8)
-        image = cv2.resize(nparr, (320, 240))
+        image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         
         if image is None:
             return jsonify({'error': 'Invalid image data'}), 400
