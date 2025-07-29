@@ -1,8 +1,8 @@
-mediapipe
-opencv-python-headless
-scikit-learn
-pandas
-numpy
-seaborn
+protobuf==3.20.*
+opencv-python-headless==4.8.1.78
 flask
 flask_cors
+numpy
+pandas
+scikit-learn
+seaborn
